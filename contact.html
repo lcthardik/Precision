@@ -3,8 +3,7 @@
   <head>
     <title>Contact Us</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="apple-touch-icon" href="assets/img/templogo.png" />
     <link
@@ -23,7 +22,6 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"
     />
     <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
-   
   </head>
 
   <body>
@@ -88,15 +86,17 @@
       <div class="col-md-6 m-auto text-center">
         <h1 class="h1"><b>Contact Us</b></h1>
         <p>
-          Feel free to reach out to us through email or phone. Should you have
-          any questions about a particular product or service, simply leave us a
-          message, and we'll be in touch with you promptly.
+          Feel free to contact us via email or phone. If you have any questions
+          about a specific product or service, just leave us a message, and
+          we'll promptly get back to you.
         </p>
       </div>
     </div>
 
     <!-- Start Map -->
-    <div class="container-fluid pt-4 pb-4 bg-dark d-flex justify-content-center">
+    <div
+      class="container-fluid pt-4 pb-4 bg-dark d-flex justify-content-center"
+    >
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.4047721495!2d77.17425388788476!3d28.64453114070161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02967815bcc3%3A0x2cdcf469d1f2714f!2sPrecision%20Enterprises!5e0!3m2!1sen!2sca!4v1691867672916!5m2!1sen!2sca"
         width="90%"
@@ -111,60 +111,60 @@
 
     <!-- Start Contact -->
     <div class="container-fluid pt-5 pb-5 bg-dark text-light">
-        <!-- <form action="https://formsubmit.co/el/balera" method="POST" /> -->
-        <form id="contactForm" class="col-md-9 m-auto" >
-          <div class="row">
-            <div class="form-group col-md-6 mb-3">
-              <label for="inputname">Name</label>
-              <input
-                type="text"
-                class="form-control mt-1"
-                id="name"
-                name="name"
-                placeholder="Name"
-              />
-            </div>
-            <div class="form-group col-md-6 mb-3">
-              <label for="inputemail">Email</label>
-              <input
-                type="email"
-                class="form-control mt-1"
-                id="email"
-                name="email"
-                placeholder="Email"
-              />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="inputsubject">Subject</label>
+      <!-- <form action="https://formsubmit.co/el/balera" method="POST" /> -->
+      <form id="contactForm" class="col-md-9 m-auto">
+        <div class="row">
+          <div class="form-group col-md-6 mb-3">
+            <label for="inputname">Name</label>
             <input
               type="text"
               class="form-control mt-1"
-              id="subject"
-              name="subject"
-              placeholder="Subject"
+              id="name"
+              name="name"
+              placeholder="Name"
             />
           </div>
-          <div class="mb-3">
-            <label for="inputmessage">Message</label>
-            <textarea
+          <div class="form-group col-md-6 mb-3">
+            <label for="inputemail">Email</label>
+            <input
+              type="email"
               class="form-control mt-1"
-              id="message"
-              name="message"
-              placeholder="Message"
-              rows="8"
-            ></textarea>
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
           </div>
-          <div class="row">
-            <div class="col text-end mt-2">
-              <button type="submit" class="btn btn-success btn-lg px-3">
-                Let’s Talk
-              </button>
-            </div>
+        </div>
+        <div class="mb-3">
+          <label for="inputsubject">Subject</label>
+          <input
+            type="text"
+            class="form-control mt-1"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="inputmessage">Message</label>
+          <textarea
+            class="form-control mt-1"
+            id="message"
+            name="message"
+            placeholder="Message"
+            rows="8"
+          ></textarea>
+        </div>
+        <div class="row">
+          <div class="col text-end mt-2">
+            <button type="submit" class="btn btn-success btn-lg px-3">
+              Let’s Talk
+            </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
+
     <!-- End Contact -->
 
     <!-- Start Footer -->
@@ -301,48 +301,50 @@
     </footer>
     <!-- End Footer -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
     <script>
-        
-        // Initialize Firebase
-        const firebaseConfig = {
-          apiKey: "AIzaSyBuqTlwci9EiEIy3Fvj_cvOrCb6FPT0y70",
-          authDomain: "precision-form-51236.firebaseapp.com",
-          projectId: "precision-form-51236",
-          storageBucket: "precision-form-51236.appspot.com",
-          messagingSenderId: "569381363785",
-          appId: "1:569381363785:web:a7fb89db61577c1f545f98"
-        };
+      // Initialize Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyBuqTlwci9EiEIy3Fvj_cvOrCb6FPT0y70",
+        authDomain: "precision-form-51236.firebaseapp.com",
+        projectId: "precision-form-51236",
+        storageBucket: "precision-form-51236.appspot.com",
+        messagingSenderId: "569381363785",
+        appId: "1:569381363785:web:a7fb89db61577c1f545f98",
+      };
 
-        firebase.initializeApp(firebaseConfig);
+      firebase.initializeApp(firebaseConfig);
 
-var contactForm = document.getElementById('contactForm');
+      var contactForm = document.getElementById("contactForm");
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    var name = contactForm.name.value;
-    var email = contactForm.email.value;
-    var message = contactForm.message.value;
-    var subject = contactForm.subject.value;
+        var name = contactForm.name.value;
+        var email = contactForm.email.value;
+        var message = contactForm.message.value;
+        var subject = contactForm.subject.value;
 
-    var db = firebase.firestore();
-    db.collection('contacts').add({
-        name: name,
-        email: email,
-        message: message,
-        subject: subject,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    }).then(function() {
-        alert('Message sent successfully!');
-        contactForm.reset();
-    }).catch(function(error) {
-        console.error('Error sending message:', error);
-        alert('An error occurred while sending the message.');
-    });
-});
+        var db = firebase.firestore();
+        db.collection("contacts")
+          .add({
+            name: name,
+            email: email,
+            message: message,
+            subject: subject,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          })
+          .then(function () {
+            alert("Message sent successfully!");
+            contactForm.reset();
+          })
+          .catch(function (error) {
+            console.error("Error sending message:", error);
+            alert("An error occurred while sending the message.");
+          });
+      });
     </script>
 
     <!-- Start Script -->
