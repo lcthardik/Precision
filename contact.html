@@ -112,7 +112,7 @@
     <!-- Start Contact -->
     <div class="container-fluid pt-5 pb-5 bg-dark text-light">
         <!-- <form action="https://formsubmit.co/el/balera" method="POST" /> -->
-        <form class="col-md-9 m-auto" action="https://formsubmit.co/your@email.com" method="POST" role="form">
+        <form id="contactForm" class="col-md-9 m-auto" >
           <div class="row">
             <div class="form-group col-md-6 mb-3">
               <label for="inputname">Name</label>
@@ -300,6 +300,50 @@
       </div>
     </footer>
     <!-- End Footer -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        
+        // Initialize Firebase
+        const firebaseConfig = {
+          apiKey: "AIzaSyBuqTlwci9EiEIy3Fvj_cvOrCb6FPT0y70",
+          authDomain: "precision-form-51236.firebaseapp.com",
+          projectId: "precision-form-51236",
+          storageBucket: "precision-form-51236.appspot.com",
+          messagingSenderId: "569381363785",
+          appId: "1:569381363785:web:a7fb89db61577c1f545f98"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+var contactForm = document.getElementById('contactForm');
+
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = contactForm.name.value;
+    var email = contactForm.email.value;
+    var message = contactForm.message.value;
+    var subject = contactForm.subject.value;
+
+    var db = firebase.firestore();
+    db.collection('contacts').add({
+        name: name,
+        email: email,
+        message: message,
+        subject: subject,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function() {
+        alert('Message sent successfully!');
+        contactForm.reset();
+    }).catch(function(error) {
+        console.error('Error sending message:', error);
+        alert('An error occurred while sending the message.');
+    });
+});
+    </script>
 
     <!-- Start Script -->
     <script src="assets/js/jquery-1.11.0.min.js"></script>
