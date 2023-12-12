@@ -9,7 +9,60 @@
   color: #2e9115 !important; /* Change the color to your desired highlight color */
 }
 
+.overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      z-index: 999;
+    }
 
+    .overlay-content {
+      text-align: center;
+      color: #fff;
+      position: relative;
+      max-width: 80%;
+      max-height: 80%;
+      overflow: hidden;
+    }
+
+    .close-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .img-container {
+      max-width: 100%;
+      max-height: 70vh;
+      margin: auto; /* Center the image horizontally */
+    }
+
+    .nav-arrows {
+      position: absolute;
+      top: 50%;
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
+    }
+
+    .nav-arrow {
+      font-size: 30px;
+      cursor: pointer;
+    }
+    .image-name {
+      margin-top: 10px;
+    }
     </style>
 
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
@@ -148,9 +201,24 @@ https://templatemo.com/tm-559-zay-shop
                     </div>
                   </div>
                   <div class="card-body">
-                    <a href="shop-single.html" class="h3 text-decoration-none" style="color: white;"
+                    <a href="#" id="showGalleryBtn" class="h3 text-decoration-none" style="color: white;"
                       >Hoodies
                     </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="overlay" id="imageGalleryOverlay">
+                <div class="overlay-content container">
+                  <div class="close-icon" onclick="closeOverlay()">&#10006;</div>
+                  <!-- Image container -->
+                  <div id="imageContainer" class="img-container container"></div>
+                  <!-- Image name -->
+      <p class="image-name" id="imageName"></p>
+                  <!-- Navigation arrows -->
+                  <div class="nav-arrows">
+                    <span class="nav-arrow" onclick="prevImage()">&#9664;</span>
+                    <span class="nav-arrow" onclick="nextImage()">&#9654;</span>
                   </div>
                 </div>
               </div>
@@ -665,6 +733,57 @@ https://templatemo.com/tm-559-zay-shop
             event.currentTarget.classList.add('active');
             
         }
+
+        const images = [
+    { src: 'assets/products/hoodies/1.jpg', name: 'hoodie 1' },
+    { src: 'assets/products/hoodies/2.jpg', name: 'hoodie 2' },
+    { src: 'assets/products/hoodies/3.jpg', name: 'hoodie 3' },
+    { src: 'assets/products/hoodies/4.jpg', name: 'hoodie 4' },
+    // Add more images as needed
+  ];
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const imageContainer = document.getElementById('imageContainer');
+    const nameElement = document.getElementById('imageName');
+    const currentImage = images[index];
+
+    imageContainer.innerHTML = '';
+
+    const imgElement = document.createElement('img');
+    imgElement.src = currentImage.src;
+    imgElement.alt = currentImage.name;
+    imgElement.className = 'img-fluid'; // Use Bootstrap class to make the image responsive
+    imageContainer.appendChild(imgElement);
+
+    nameElement.innerText = currentImage.name;
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  // Function to open the overlay with images
+  function showImageGallery() {
+    currentIndex = 0; // Reset index to the first image
+    showImage(currentIndex);
+    document.getElementById('imageGalleryOverlay').style.display = 'flex';
+  }
+
+  // Function to close the overlay
+  function closeOverlay() {
+    document.getElementById('imageGalleryOverlay').style.display = 'none';
+  }
+
+  // Attach event listener to the button
+  document.getElementById('showGalleryBtn').addEventListener('click', showImageGallery);
     </script>
     <!-- End Script -->
   </body>
