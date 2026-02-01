@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Documents</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      margin-bottom: 10px;
+      color: #1f2937;
+    }
+
+    header p {
+      font-size: 1rem;
+      color: #6b7280;
+    }
+
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .pdf-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pdf-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .pdf-thumb {
+      width: 100%;
+      height: 230px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 16px;
+      background: #f9fafb;
+    }
+
+    .pdf-thumb embed {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .pdf-card h3 {
+      margin: 0 0 14px 0;
+      font-size: 1.15rem;
+      color: #111827;
+    }
+
+    .pdf-card a {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: background 0.2s ease;
+    }
+
+    .pdf-card a:hover {
+      background: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Documentation</h1>
+      <p>Click on any document to view the full PDF</p>
+    </header>
+
+    <section class="pdf-grid">
+
+      <div class="pdf-card">
+        <div class="pdf-thumb">
+          <embed src="aug.pdf" type="application/pdf" />
+        </div>
+        <h3>Aug</h3>
+        <a href="aug.pdf" target="_blank">Open PDF</a>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-thumb">
+          <embed src="Test Certificate.pdf#page=1&view=FitH" type="application/pdf" />
+        </div>
+        <h3>Test Certificate</h3>
+        <a href="Test Certificate.pdf" target="_blank">Open PDF</a>
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-thumb">
+          <embed src="USHA ARMOUR PVT. LTD.pdf#page=1&view=FitH" type="application/pdf" />
+        </div>
+        <h3>USHA ARMOUR PVT. LTD</h3>
+        <a href="USHA ARMOUR PVT. LTD.pdf" target="_blank">Open PDF</a>
+      </div>
+
+    </section>
+
+    <footer>
+     
+    </footer>
+  </div>
+</body>
+</html>
